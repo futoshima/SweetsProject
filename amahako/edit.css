@@ -1,18 +1,61 @@
-﻿#top{
+﻿/*.top{
 font-size: 40px;
 background-color: #FFFFFF;
 color: #33bde6;
+}   */            
+
+.top{
+    display: block;
+    position: relative;
+    height: 50px;/*リボンの高さ*/
+    line-height: 50px;/*リボンの高さ*/
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 30px;/*横の大きさ*/
+    font-size: 30px;/*文字の大きさ*/
+    background: #f57a78;/*塗りつぶし色*/
+    color: #FFF;/*文字色*/
+    box-sizing: border-box;
 }    
+
+.top:before, .top:after{
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 0px;
+    z-index: 1;
+}           
+
+.top:before{
+    top: 0;
+    left: 0;
+    border-width: 25px 0px 25px 15px;
+    border-color: transparent transparent transparent #33bde6;
+    border-style: solid;
+}                   
+
+.top:after{
+    top: 0;
+    right: 0;
+    border-width: 25px 15px 25px 0px;
+    border-color: transparent #33bde6 transparent transparent;
+    border-style: solid;
+}
 
 /*中央*/        
    
 
-/*左側*/    
+/*左側*/  
+h3{
+/*text-indent: -1em;*/
+}
+   
 table,th,td{ 
 border:none;
 }  
 
-.leftbox{
+.leftbox{        
+float: left;
 padding: 0.5em 1em;
 margin: 2em 0;
 color: #33bde6;
@@ -20,11 +63,65 @@ background: #FFFFFF;
 border-left: solid 10px #ffc06e;
 }     
 
-div.photo1{ 
-width:    400px;
-margin: 0px auto;
+/*右側*/
+div.photo1{  
+/*max-width: 75%;*/
 }       
 div.photo1 p{   
-width: 400px;
-float: right; 
+}    
+
+	/*ゲーム下*/  
+.gunder{      
+display: -ms-flex; 
+display: -webkit-flex; 
+display: -moz-flex; 
+display: -o-flex; 
+display: flex;   
+
+flex-direction: -ms-row-reverse;
+flex-direction: -webkit-row-reverse;
+flex-direction: -moz-row-reverse;
+flex-direction: -o-row-reverse;
+flex-direction:row-reverse;   
+
+justify-content: -ms-center;
+justify-content: -webkit-center;
+justify-content: -moz-center;
+justify-content: -o-center;
+justify-content: center;
+}
+
+.gunder input[type='radio'] {
+ display: none ;
+}  
+
+.gunder label{
+/*position: relative;*/  
+padding: 10px 0px 20px 0px;
+color: #bbb;
+cursor: pointer;
+font-size: 30px;
+}  
+
+.gunder label:hover,
+.gunder label:hover ~ label,
+.gunder input[type='radio']:checked ~ label{
+color: #faee2e;
+}
+
+	/*下*/
+.under{ 
+clear: left;   
+border: 0;      
+height: 30px;
+background-image: url(photo/s_cookie.png);
+margin: 20px 0px;
+}             
+           
+a:hover{
+color:#FF33FF
+}
+
+a:active{
+color:#DDDDDD;
 }
